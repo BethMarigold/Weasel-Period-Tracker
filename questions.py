@@ -26,7 +26,7 @@ day0 = int(day0)
 year0 = int(year0)
 length0Time = 0
 
-def monthFinder3(length3Time, year):
+def monthFinder(length3Time, year, month3, day3):
     is_leap = year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
     if month3 == 1:
         length3Time += day3
@@ -65,46 +65,7 @@ def monthFinder3(length3Time, year):
         length3Time += day3
     return length3Time
 
-def monthFinder2(length2Time, year):
-    is_leap = year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
-    if month2 == 1:
-        length2Time += day2
-    elif month2 == 2:
-        length2Time += 31
-        length2Time += day2
-    elif month2 == 3:
-        length2Time += 60 if is_leap else 59
-        length2Time += day2
-    elif month2 == 4:
-        length2Time += 91 if is_leap else 90
-        length2Time += day2
-    elif month2 == 5:
-        length2Time += 121 if is_leap else 120
-        length2Time += day2
-    elif month2 == 6:
-        length2Time += 152 if is_leap else 151
-        length2Time += day2
-    elif month2 == 7:
-        length2Time += 182 if is_leap else 181
-        length2Time += day2
-    elif month2 == 8:
-        length2Time += 213 if is_leap else 212
-        length2Time += day2
-    elif month2 == 9:
-        length2Time += 244 if is_leap else 243
-        length2Time += day2
-    elif month2 == 10:
-        length2Time += 274 if is_leap else 273
-        length2Time += day2
-    elif month2 == 11:
-        length2Time += 305 if is_leap else 304
-        length2Time += day2
-    elif month2 == 12:
-        length2Time += 335 if is_leap else 334
-        length2Time += day2
-    return length2Time
 
-def monthFinder1(length1Time, year):
     is_leap = year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
     if month1 == 1:
         length1Time += day1
@@ -143,7 +104,7 @@ def monthFinder1(length1Time, year):
         length1Time += day1
     return length1Time
 
-def monthFinder0(length0Time, year):
+
     is_leap = year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
     if month0 == 1:
         length0Time += day0
@@ -182,10 +143,10 @@ def monthFinder0(length0Time, year):
         length0Time += day0
     return length0Time
 
-length3Time = monthFinder3(length3Time, year3)
-length2Time = monthFinder2(length2Time, year2)
-length1Time = monthFinder1(length1Time, year1)
-length0Time = monthFinder0(length0Time, year0)
+length3Time = monthFinder(length3Time, year3, month3, day3)
+length2Time = monthFinder(length2Time, year2, month2, day2)
+length1Time = monthFinder(length1Time, year1, month1, day1)
+length0Time = monthFinder(length0Time, year0, month0, day0)
 
 if year3 == year2:
     distance32 = length3Time-length2Time
@@ -230,34 +191,34 @@ if next > 365:
     print(f"Project your next one to Weasel on 1/{int(next)}/{int(nextYear)}")
 elif next > 334:
     next -= 334
-    print(f"Project your next one to Weasel on 12/{int(next)}")
+    print(f"Project your next one to Weasel on 12/{int(next)}/{int(year3)}")
 elif next > 304:
     next -= 304
-    print(f"Project your next one to Weasel on 11/{int(next)}")
+    print(f"Project your next one to Weasel on 11/{int(next)}/{int(year3)}")
 elif next > 273:
     next -= 273
-    print(f"Project your next one to Weasel on 10/{int(next)}")
+    print(f"Project your next one to Weasel on 10/{int(next)}/{int(year3)}")
 elif next > 243:
     next -= 243
-    print(f"Project your next one to Weasel on 09/{int(next)}")
+    print(f"Project your next one to Weasel on 09/{int(next)}/{int(year3)}")
 elif next > 212:
     next -= 212
-    print(f"Project your next one to Weasel on 08/{int(next)}")
+    print(f"Project your next one to Weasel on 08/{int(next)}/{int(year3)}")
 elif next > 181:
     next -= 181
-    print(f"Project your next one to Weasel on 07/{int(next)}")
+    print(f"Project your next one to Weasel on 07/{int(next)}/{int(year3)}")
 elif next > 151:
     next -= 151
-    print(f"Project your next one to Weasel on 06/{int(next)}")
+    print(f"Project your next one to Weasel on 06/{int(next)}/{int(year3)}")
 elif next > 120:
     next -= 120
-    print(f"Project your next one to Weasel on 05/{int(next)}")
+    print(f"Project your next one to Weasel on 05/{int(next)}/{int(year3)}")
 elif next > 90:
     next -= 90
-    print(f"Project your next one to Weasel on 04/{int(next)}")
+    print(f"Project your next one to Weasel on 04/{int(next)}/{int(year3)}")
 elif next > 59:
     next -= 59
-    print(f"Project your next one to Weasel on 03/{int(next)}")
+    print(f"Project your next one to Weasel on 03/{int(next)}/{int(year3)}")
 elif next > 31:
     next -= 31
-    print(f"Project your next one to Weasel on 02/{int(next)}")
+    print(f"Project your next one to Weasel on 02/{int(next)}/{int(year3)}")
